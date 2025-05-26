@@ -1,0 +1,36 @@
+@use "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root{
+  font-family: 'Roboto', Courier, monospace;
+}
+
+h1{
+  font-weight: 800;
+  font-size: 40px;
+  color: #fff;
+}
+
+h3{
+  font-weight: 500;
+  font-size: 16px;
+}
+
+a,ul,li,button{
+  all: unset;
+}
+
+a{
+  cursor: pointer;
+}
+
+//Убрать
+main{
+  display: flex;
+  flex-direction: column;
+}

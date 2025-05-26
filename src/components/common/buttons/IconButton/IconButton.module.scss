@@ -1,0 +1,15 @@
+@use "../../../../styles/variables" as v;
+
+.button-icon{
+  line-height: 0px;
+  cursor: pointer;
+}
+
+.button-icon__icon{
+  height: 26px;
+  width: 26px;
+}
+
+.button-icon__icon:hover{
+  fill: v.$gray;
+}

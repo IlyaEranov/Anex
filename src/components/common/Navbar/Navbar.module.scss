@@ -1,0 +1,29 @@
+nav{
+  display: none;
+}
+
+.nav-wrapper__link{
+  font-size: 14px;
+  font-weight: 400;
+  padding: 3px 0;
+  border-bottom: 1px solid #fff;
+  transition: 0.4s;
+  cursor: pointer;
+  &._active{
+    border-color: #000;
+  }
+}
+
+.nav-wrapper__link:hover{
+  border-color: #000;
+}
+
+@media (min-width: 1440px) {
+  nav{
+    display: flex;
+  }
+  .nav-wrapper{
+    display: flex;
+    gap: 42px;
+  }
+}

@@ -1,0 +1,7 @@
+@use "../../../styles/variables" as v;
+
+.line{
+  height: 1px;
+  width: 100px;
+  background-color: v.$line;
+}
