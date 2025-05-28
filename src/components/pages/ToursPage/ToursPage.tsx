@@ -1,29 +1,12 @@
-import s from "./ToursPage.module.scss"
-import { useState } from "react";
-import SelectField from "../../common/fields/SelectField/SelectField";
+import s from "./ToursPage.module.scss";
 import Layout from "../../common/Layout/Layout";
+import DirectionModal from "../../ui/modals/search/DirectionModal/DirectionModal";
 
 function ToursPage(){
-
-  const [value, setValue] = useState<string | undefined>()
-  const [active, setActive] = useState(false)
-
-  const handlerSubmit = () => {
-    setValue("Будапешт")
-    setActive(false)
-  }
-
   return(
     <Layout>
-      <SelectField placeholder={"Откуда"} value={value} onClick={() => setActive(true)}/>
-      <span className={s.line}></span>
-      <SelectField placeholder={"Откуда"} value={value}/>
-      <span className={s.line}></span>
-      <SelectField placeholder={"Откуда"} value={value}/>
-      <span className={s.line}></span>
-      <button onClick={() => setValue("Москва")}>Click</button>
-      <button onClick={() => setValue(undefined)}>Click</button>
-      {active && <div onClick={handlerSubmit}>Modal</div>}
+      <DirectionModal placeholder="Откуда"/>
+      <DirectionModal placeholder="Куда"/>
     </Layout>
   )
 }

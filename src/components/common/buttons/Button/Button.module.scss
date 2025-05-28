@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
   padding: 12px 16px;
   border-radius: 30px;
   font-weight: 500;
@@ -18,5 +19,23 @@
 
   &.white:hover {
     background-color: v.$white-hover;
+  }
+
+  &.red{
+    color: #fff;
+    background-color: v.$red;
+  }
+
+  &.red:hover{
+    background-color: v.$red-hover;
+  }
+
+  &.black{
+    color: #fff;
+    background-color: #000;
+  }
+
+  &.black:hover{
+    background-color: v.$gray;
   }
 }

@@ -13,15 +13,23 @@
 h1{
   font-weight: 800;
   font-size: 40px;
+  line-height: 100%;
   color: #fff;
+}
+
+h2{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
 }
 
 h3{
   font-weight: 500;
   font-size: 16px;
+  line-height: 100%;
 }
 
-a,ul,li,button{
+a,ul,li,button,input{
   all: unset;
 }
 

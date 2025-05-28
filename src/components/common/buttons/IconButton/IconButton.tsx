@@ -3,11 +3,12 @@ import type { FC } from "react"
 
 interface IconButtonProps{
   path: string
+  onClick?: () => void
 }
 
-const IconButton: FC<IconButtonProps> = ({path}) => {
+const IconButton: FC<IconButtonProps> = ({path, onClick}) => {
   return(
-    <button className={s["button-icon"]}>
+    <button className={s["button-icon"]} onClick={onClick}>
       <img className={s["button-icon__icon"]} src={path}/>
     </button>
   )
