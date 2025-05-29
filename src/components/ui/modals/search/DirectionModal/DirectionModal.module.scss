@@ -1,10 +1,6 @@
 @use "../../../../../styles/variables" as v;
 
-.direction-modal{
-
-}
-
-.direction-modal__top{
+.direction-modal-top{
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -12,7 +8,7 @@
   border-bottom: 1px solid v.$line;
 }
 
-.direction-modal__label{
+.direction-modal-top__label{
   position: absolute;
   left: 0;
   text-align: center;
@@ -20,70 +16,39 @@
   pointer-events: none;
 }
 
-.direction-modal__main{
+.direction-modal-main{
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 16px 30px 0;
 }
 
-.direction-modal__search{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px;
-  border-radius: 30px;
-  border: 1px solid v.$line;
-  height: 38px;
-}
-
-.direction-modal__input{
-  width: 122px;
-  height: 16px;
-  font-weight: 300;
-  font-size: 14px;
-}
-
-.search-icon{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  
-  width: 40px;
-  height: 40px;
-  line-height: 0;
-  &.__arrow{
-    background-color: v.$red;
-  }
-}
-
-.direction-modal__content{
+.direction-modal-main__content{
   display: flex;
   justify-content: space-between;
   height: 200px;
   overflow-y: auto;
 }
 
-.direction-modal__column{
+.direction-modal-main__column{
   display: flex;
   flex-direction: column;
   gap: 13px;
 }
 
-.direction-modal-item{
+.direction-modal-main-item{
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
 }
 
-.direction-modal-item__name{
+.direction-modal-main-item__name{
   font-size: 14px;
   font-weight: 300;
 }
 
-.direction-modal__bottom{
+.direction-modal-bottom{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,13 +57,13 @@
   padding: 20px 30px;
 }
 
-.bottom-button{
+.direction-modal-bottom-button{
   font-size: 16px;
   font-weight: 500;
   color: v.$gray-text;
 }
 
-.bottom-button__text{
+.direction-modal-bottom-button__text{
   font-size: 16px;
   font-weight: 500;
 }
