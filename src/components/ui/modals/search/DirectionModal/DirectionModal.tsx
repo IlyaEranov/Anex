@@ -7,7 +7,6 @@ import api from "../../../../../../mocks/api/api.json"
 import CheckBox from "../../../../common/buttons/CheckBox/CheckBox"
 import IconButton from "../../../../common/buttons/IconButton/IconButton"
 import close from "../../../../../assets/icons/close.svg"
-import search from '../../../../../assets/icons/search.svg'
 import arrow from "../../../../../assets/icons/diagonal-arrow.svg"
 import Button from "../../../../common/buttons/Button/Button"
 import SearchField from "../../../../common/fields/SearchField/SearchField"
@@ -54,7 +53,7 @@ const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
               {api.countries.map((e, i) =>
                 <div className={s["direction-modal-main-item"]} onClick={() => handlerChoice(e.name, i)}>
                   <CheckBox isActive={index == i ? true : false} />
-                  <div className={s["direction-modal--main-item__name"]}>{e.name}</div>
+                  <div className={s["direction-modal-main-item__name"]}>{e.name}</div>
                 </div>
               )}
             </div>

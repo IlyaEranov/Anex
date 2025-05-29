@@ -1,24 +1,18 @@
-import SelectField from "../SelectField/SelectField"
 import s from "./SearchField.module.scss"
+import search from "../../../../assets/icons/search.svg"
+import arrow from "../../../../assets/icons/diagonal-arrow.svg"
 
-function SearchField(){
-  return(
-    <div className={s.search}>
-      <div className={s["search-wrapper"]}>
-        <SelectField placeholder="Откуда"/>
-        <span className={s.hline}></span>
-        <SelectField placeholder="Куда"/>
-        <span className={s.hline}></span>
-        <SelectField placeholder="Вылет"/>
-        <span className={s.hline}></span>
-        <div className={s["search-wrapper__bottom"]}>
-          <SelectField placeholder="На сколько"/>
-          <span className={s.vline}></span>
-          <SelectField placeholder="Туристы"/>
-        </div>
-        <span className={s.hline}></span>
+const SearchField = () => {
+  return (
+    <button className={s.search}>
+      <div className={s.search__icon}>
+        <img src={search}/>
       </div>
-    </div>
+      <input placeholder="Что будем искать?" className={s.search__input}/>
+      <button className={`${s.search__icon} ${s.arrow}`}>
+        <img src={arrow}/>
+      </button>
+    </button>
   )
 }
 
