@@ -54,7 +54,7 @@ const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
               {api.countries.map((e, i) =>
                 <div className={s["direction-modal-main-item"]} onClick={() => handlerChoice(e.name, i)}>
                   <CheckBox isActive={index == i ? true : false} />
-                  <div className={s["direction-modal--main-item__name"]}>{e.name}</div>
+                  <div className={s["direction-modal-main-item__name"]}>{e.name}</div>
                 </div>
               )}
             </div>

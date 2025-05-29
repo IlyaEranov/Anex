@@ -1,31 +1,33 @@
 @use "../../../../styles/variables" as v;
 
 .search{
-  background-color: #fff;
-  height: 320px;
-  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
   border-radius: 30px;
+  border: 1px solid v.$line;
+  height: 38px;
 }
 
-.search-wrapper{
-  padding: 16px 24px;
+.search__icon{
   display: flex;
-  flex-direction: column;
-}
-
-.search-wrapper__bottom{
-  display: flex;
-}
-
-.hline{
-  height: 1px;
-  width: 100%;
-  background-color: v.$line;
-}
-
-.vline{
-  margin: 0 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  
+  width: 40px;
   height: 40px;
-  width: 1px;
-  background-color: v.$line;
+  line-height: 0;
+  &.arrow{
+    background-color: v.$red;
+  }
 }
+
+.search__input{
+  width: 122px;
+  height: 16px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
