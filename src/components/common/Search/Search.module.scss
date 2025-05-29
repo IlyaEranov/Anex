@@ -2,13 +2,13 @@
 
 .search{
   background-color: #fff;
-  height: 320px;
   width: 300px;
   border-radius: 30px;
+  padding: 16px 24px;
 }
 
 .search-wrapper{
-  padding: 16px 24px;
+  
   display: flex;
   flex-direction: column;
 }
@@ -24,8 +24,15 @@
 }
 
 .vline{
-  margin: 0 24px;
+  margin: auto;
   height: 40px;
   width: 1px;
   background-color: v.$line;
+}
+
+.search-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
 }

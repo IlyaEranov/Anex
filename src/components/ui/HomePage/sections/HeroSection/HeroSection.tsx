@@ -1,6 +1,6 @@
 import React from "react"
-import SearchField from "../../../../common/fields/SearchField/SearchField"
 import s from "./HeroSection.module.scss"
+import Search from "../../../../common/Search/Search"
 
 function HeroSection() {
   return (
@@ -8,7 +8,7 @@ function HeroSection() {
       <div className={s["hero-section__wrapper"]}>
         <div className={s["hero-section__container"]}>
           <h1 className={s["hero-section__label"]}>ПУТЕШЕСТВИЯ МЕЧТЫ</h1>
-          <SearchField />
+          <Search/>
         </div>
       </div>
     </section>

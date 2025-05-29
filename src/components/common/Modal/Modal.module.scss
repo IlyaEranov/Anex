@@ -1,24 +1,39 @@
 .modal {
-  display: none;
-  transition: 0.2s;
   &._active {
-    display: block;
-
     .modal__backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 3;
-
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba($color: #000000, $alpha: 0.3);
+      pointer-events: all;
+      opacity: 1;
     }
 
-    .modal-content {
-      margin-top: 60px;
-      background-color: #fff;
-      border-radius: 30px;
+    .modal__content {
+      transform: translateY(0);
     }
   }
+}
+
+.modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba($color: #000000, $alpha: 0.3);
+
+  transition: 0.4s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal__content {
+  transition: 0.8s;
+  margin-top: 60px;
+  background-color: #fff;
+  border-radius: 30px;
+  transform: translateY(-500px);
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }

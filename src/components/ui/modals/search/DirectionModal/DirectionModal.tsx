@@ -10,6 +10,8 @@ import close from "../../../../../assets/icons/close.svg"
 import arrow from "../../../../../assets/icons/diagonal-arrow.svg"
 import Button from "../../../../common/buttons/Button/Button"
 import SearchField from "../../../../common/fields/SearchField/SearchField"
+import ModalTop from "../ModalTop/ModalTop"
+import ModalBottom from "../ModalBottom/ModalBottom"
 
 interface DirectionModalProps {
   placeholder: "Откуда" | "Куда"
@@ -26,46 +28,42 @@ const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
     setIndex(i)
   }
 
+  const handlerReset = () => {
+    setValue("")
+    setIndex(undefined)
+  }
+
   return (
     <>
       <SelectField placeholder={placeholder} onClick={openModal} value={value} />
       <Modal isActive={isOpen} onClick={closeModal}>
-        <div className={s["direction-modal-top"]}>
-          <h2 className={s["direction-modal-top__label"]}>{placeholder}</h2>
-          <IconButton path={close} onClick={closeModal} />
-        </div>
-        <div className={s["direction-modal-main"]}>
+        <ModalTop placeholder={placeholder} onClick={closeModal}/>
+        <div className={s["direction-modal"]}>
           <SearchField/>
-          <div className={s["direction-modal-main__content"]}>
+          <div className={s["direction-modal__content"]}>
             {placeholder == "Куда" &&
-              <div className={s["direction-modal-main__column"]}>
+              <div className={s["direction-modal__column"]}>
                 <h3>Популярные</h3>
                 {api.countries.map((e, i) =>
-                  <div className={s["direction-modal-main-item"]} onClick={() => handlerChoice(e.name, i)}>
+                  <div key={e.name} className={s["direction-modal-item"]} onClick={() => handlerChoice(e.name, i)}>
                     <CheckBox isActive={index == i ? true : false} />
-                    <div className={s["direction-modal-main-item__name"]}>{e.name}</div>
+                    <div className={s["direction-modal-item__name"]}>{e.name}</div>
                   </div>
                 )}
               </div>
             }
-            <div className={s["direction-modal-main__column"]}>
+            <div className={s["direction-modal__column"]}>
               <h3>Все страны</h3>
               {api.countries.map((e, i) =>
-                <div className={s["direction-modal-main-item"]} onClick={() => handlerChoice(e.name, i)}>
+                <div key={e.name} className={s["direction-modal-item"]} onClick={() => handlerChoice(e.name, i)}>
                   <CheckBox isActive={index == i ? true : false} />
-                  <div className={s["direction-modal-main-item__name"]}>{e.name}</div>
+                  <div className={s["direction-modal-item__name"]}>{e.name}</div>
                 </div>
               )}
             </div>
           </div>
         </div>
-        <div className={s["direction-modal-bottom"]}>
-          <button className={s["direction-modal-bottom-button"]} onClick={() => {
-            setValue("")
-            setIndex(undefined)
-          }}>Очистить</button>
-          <Button style="black"><span className={s["direction-modal-bottom-button__text"]}>ВЫБРАТЬ</span><img src={arrow}/></Button>
-        </div>
+        <ModalBottom onClick={handlerReset}/>
       </Modal>
     </>
   )

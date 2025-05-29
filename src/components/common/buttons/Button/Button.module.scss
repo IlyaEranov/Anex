@@ -12,7 +12,6 @@
   line-height: 14px;
   cursor: pointer;
   transition: 0.2s;
-
   &.white {
     border: 1px solid v.$border;
   }
@@ -24,6 +23,7 @@
   &.red{
     color: #fff;
     background-color: v.$red;
+    width: 100%;
   }
 
   &.red:hover{
