@@ -10,7 +10,7 @@ import ModalTop from "../ModalTop/ModalTop"
 import ModalBottom from "../ModalBottom/ModalBottom"
 
 interface DateModalProps {
-  placeholder: "Дата" | "Количество дней"
+  placeholder: "Дата" | "На сколько"
 }
 
 const DateModal: FC<DateModalProps> = ({ placeholder }) => {
@@ -21,7 +21,7 @@ const DateModal: FC<DateModalProps> = ({ placeholder }) => {
   return (
     <>
       <SelectField placeholder={placeholder} onClick={openModal}/>
-      <Modal isActive={isOpen} onClick={closeModal}>
+      <Modal isActive={isOpen} onClick={closeModal} backdrop>
         <ModalTop placeholder={placeholder} onClick={closeModal}/>
         <LocalizationProvider adapterLocale="ru" dateAdapter={AdapterDayjs}>
           <DateCalendar className={s.date}/>

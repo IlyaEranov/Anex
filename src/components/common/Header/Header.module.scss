@@ -40,8 +40,9 @@
     align-items: center;
   }
 
-  .line {
-    height: 43px;
+  .header-buttons_active::after{
+    content: "";
+    height: 40px;
     width: 1px;
     margin: 0 24px;
     background-color: v.$line;

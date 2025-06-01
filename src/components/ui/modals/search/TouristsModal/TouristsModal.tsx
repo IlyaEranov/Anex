@@ -30,7 +30,7 @@ function TouristsModal() {
   return (
     <>
       <SelectField placeholder={placeholder} onClick={openModal} />
-      <Modal isActive={isOpen} onClick={closeModal}>
+      <Modal isActive={isOpen} onClick={closeModal} backdrop>
         <ModalTop placeholder={placeholder} onClick={closeModal} />
         <div className={s["tourists-modal"]}>
           <div className={s["tourists-modal__item"]}>
@@ -46,7 +46,7 @@ function TouristsModal() {
             <div className={s["tourists-modal__counter"]}>
               <IconButton path={decrement} onClick={() => handlerCount(childs - 1, setChilds)}/>
               <span>{childs}</span>
-              <IconButton path={increment} onClick={() => handlerCount(adults + 1, setChilds)}/>
+              <IconButton path={increment} onClick={() => handlerCount(childs + 1, setChilds)}/>
             </div>
           </div>
         </div>

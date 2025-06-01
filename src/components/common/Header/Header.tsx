@@ -28,8 +28,7 @@ function Header() {
         <Navbar/>
         <div className={s["header-buttons"]}>
           <div className={s["header-buttons_active"]}>
-            <NavButtons/>
-            <span className={s.line}></span>  
+            <NavButtons/>  
           </div>
           <MenuButton onClick={handlerActive}/>
         </div>

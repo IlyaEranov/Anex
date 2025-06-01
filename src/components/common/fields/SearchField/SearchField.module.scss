@@ -24,6 +24,7 @@
   height: 40px;
   line-height: 0;
   &.arrow{
+    cursor: pointer;
     background-color: v.$red;
   }
 }

@@ -9,23 +9,26 @@ function Search() {
   return (
     <div className={s.search}>
       <div className={s["search-wrapper"]}>
-        <DirectionModal placeholder="Откуда" />
-        <span className={s.hline}></span>
-        <DirectionModal placeholder="Куда" />
-        <span className={s.hline}></span>
-        <DateModal placeholder="Дата" />
-        <span className={s.hline}></span>
-        <div className={s["search-wrapper__bottom"]}>
-          <DateModal placeholder="Количество дней" />
-          <span className={s.vline}></span>
-          <TouristsModal />
+        <div className={s["search-wrapper__item"]}>
+          <DirectionModal placeholder="Откуда" />
         </div>
-        <span className={s.hline}></span>
-      </div>
-      <div className={s["search-button"]}>
-        <Button style="red">
+        <div className={s["search-wrapper__item"]}>
+          <DirectionModal placeholder="Куда" />
+        </div>
+        <div className={s["search-wrapper__item"]}>
+          <DateModal placeholder="Дата" />
+        </div>
+        <div className={s["search-wrapper__item"]}>
+          <div className={s["search-wrapper-bottom"]}>
+            <div className={s["search-wrapper-bottom__item"]}><DateModal placeholder="На сколько" /></div>
+            <TouristsModal />
+          </div>
+        </div>
+        <div className={s["search-button"]}>
+          <Button style="red">
             <span>ПОДОБРАТЬ</span><img src={arrow} />
-        </Button>
+          </Button>
+        </div>
       </div>
     </div>
   )

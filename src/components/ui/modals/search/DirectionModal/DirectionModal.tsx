@@ -36,10 +36,12 @@ const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
   return (
     <>
       <SelectField placeholder={placeholder} onClick={openModal} value={value} />
-      <Modal isActive={isOpen} onClick={closeModal}>
+      <Modal isActive={isOpen} onClick={closeModal} backdrop>
         <ModalTop placeholder={placeholder} onClick={closeModal}/>
         <div className={s["direction-modal"]}>
-          <SearchField/>
+          <div className={s["direction-modal__search"]}>
+            <SearchField/>
+          </div>
           <div className={s["direction-modal__content"]}>
             {placeholder == "Куда" &&
               <div className={s["direction-modal__column"]}>
