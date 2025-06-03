@@ -1,24 +1,24 @@
-import s from "./Navbar.module.scss"
 import { NavLink } from "react-router-dom"
 import { navLinks } from "../../../router/routes"
+import s from "./Nav.module.scss"
 
-function Navbar(){
+function Nav(){
   return(
     <nav>
-      <ul className={s["nav-wrapper"]}>
+      <ul className={s["nav-inner"]}>
         {navLinks.map(e => 
           <li key={e.value}>
             <NavLink
               to={e.path}
               className={({isActive}) => [
-                isActive ? `${s["nav-wrapper__link"]} ${s._active}` : s["nav-wrapper__link"]
-              ].join("")} 
+                `${s["nav-inner__link"]} ${isActive && s._active}`
+              ].join("")}
             >{e.value.toUpperCase()}</NavLink>
-          </li>  
+          </li>
         )}
       </ul>
     </nav>
   )
 }
 
-export default Navbar
+export default Nav

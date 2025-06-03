@@ -1,7 +1,7 @@
-import { Suspense, type FC, type ReactNode } from "react"
-import Loader from "../Loader/Loader"
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer"
+import { Suspense, type FC, type ReactNode } from "react";
+import Header from "../Header/Header";  
+import Loader from "../Loader/Loader";
+import Footer from "../Footer/Footer";
 
 interface LayoutProps{
   children: ReactNode

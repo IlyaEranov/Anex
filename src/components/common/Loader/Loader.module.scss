@@ -1,0 +1,12 @@
+@use "../../../styles/variables" as v;
+
+.loader__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader svg{
+  color: v.$red;
+}

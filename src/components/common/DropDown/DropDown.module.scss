@@ -1,73 +1,67 @@
 @use "../../../styles/variables" as v;
 
-.sidebar{
-  position: absolute;
-  left: 0;
-  width: 100%;
-  top: 68px;
-  z-index: 0;
-  transform: translateY(-600px);
-  transition: 1s;
-  background-color: #fff;
-  &._active{
-    z-index: 1;
-    transform: translateY(0);
-  } 
+.dropdown{
+  &.MuiPaper-root-MuiDrawer-paper{
+    top: 60px;
+  }
 }
 
-.sidebar__main{
+.dropdown__main{
   display: flex;
   flex-direction: column;
 }
 
-.sidebar-section{
+.dropdown-section{
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 15px 30px;
-  z-index: 2;
 }
 
-.sidebar-section__list{
+.dropdown-section__list{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px
 }
 
-.sidebar-section__item{
+.dropdown-section__item{
   font-weight: 300;
   font-size: 14px;
 }
 
-.sidebar__bottom{
+.dropdown__bottom{
   border-top: 1px solid v.$line;
   padding: 30px 0;
   margin: 45px 30px 0px;
 }
 
 @media (min-width: 768px) {
-  .sidebar{
+  .dropdown{
     top: 85px;
   }
-  .sidebar__main{
+
+  .dropdown__main{
     justify-content: center;
     flex-direction: row;
     gap: 20px;
   }
-  .sidebar-section{
+
+  .dropdown-section{
     padding: 52px 30px;
     width: 240px;
   }
-  .sidebar-section__list{
+
+  .dropdown-section__list{
     grid-template-columns: 1fr;
   }
-  .sidebar__bottom{
+
+  .dropdown__bottom{
     display: none;
   }
 }
 
 @media (min-width: 1024px) {
-  .sidebar__main{
+  .dropdown__main{
     gap: 60px;
   }
 }

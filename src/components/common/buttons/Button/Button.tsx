@@ -1,22 +1,14 @@
-import s from "./Button.module.scss"
-import type { FC, ReactNode } from "react";
+import { Button as MuiButton, type ButtonProps as MuiButtonProps } from "@mui/material"
+import type { FC } from "react"
 
-interface ButtonProps{
-  children: ReactNode
-  onCLick?: () => void
-  style: "white" | "red" | "black"
+interface ButtonProps extends MuiButtonProps{
+  variantColor: "red" | "white" | "black"
 }
 
-const Button: FC<ButtonProps> = ({children, onCLick, style}) => {
+const Button: FC<ButtonProps> = ({...rest}) => {
   return(
-    <button
-      className={`${s.button} ${style == "white" ? s.white : style == "red" ? s.red : s.black}`} 
-      onClick={onCLick}
-    >
-      {children}
-    </button>
+    <MuiButton  {...rest}/>
   )
 }
 
 export default Button
-
