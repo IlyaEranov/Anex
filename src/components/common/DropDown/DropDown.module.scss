@@ -1,8 +1,8 @@
 @use "../../../styles/variables" as v;
 
 .dropdown{
-  &.MuiPaper-root-MuiDrawer-paper{
-    top: 60px;
+  div{
+    top: 68px;
   }
 }
 
@@ -61,6 +61,13 @@
 }
 
 @media (min-width: 1024px) {
+
+  .dropdown{
+    div{
+      top: 85px;
+    }
+  }
+
   .dropdown__main{
     gap: 60px;
   }

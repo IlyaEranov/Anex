@@ -4,21 +4,13 @@ import s from "./Header.module.scss"
 import Nav from "../Nav/Nav"
 import IconButton from "../buttons/IconButton/IconButton"
 import menu from "../../../assets/icons/menu.svg"
-import { useState } from "react"
 import NavButtons from "../NavButtons/NavButtons"
 import DropDown from "../DropDown/DropDown"
+import { useModal } from "../../../hooks/useModal"
 
 function Header() {
 
-  const [isActive, setActive] = useState(false)
-
-  const handlerActive = () => {
-    if(isActive){
-      setActive(false)
-    } else {
-      setActive(true)
-    }
-  }
+  const {isActive, handlerActive} = useModal()
 
   return (
     <header>

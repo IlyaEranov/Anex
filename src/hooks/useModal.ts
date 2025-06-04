@@ -1,19 +1,18 @@
 import { useState } from "react"
 
 export function useModal(){
-  const [isOpen, setOpen] = useState(false)
-
-  const openModal = () => {
-    setOpen(true)
-  }
-
-  const closeModal = () => {
-    setOpen(false)
-  }
+  const [isActive, setActive] = useState(false)
   
-  return{
-    isOpen,
-    openModal,
-    closeModal
+  const handlerActive = () => {
+    if(isActive){
+      setActive(false)
+    } else {
+      setActive(true)
+    }
+  }
+
+  return {
+    isActive,
+    handlerActive
   }
 }

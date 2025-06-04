@@ -7,7 +7,7 @@ import location from "../../../assets/icons/location.svg"
 function NavButtons(){
   return(
     <div className={s["nav-buttons"]}>
-      <Button variantColor="white">ОСТАВИТЬ ЗАЯВКУ</Button>
+      <Button variant="text" variantColor="white">ОСТАВИТЬ ЗАЯВКУ</Button>
       <div className={s["nav-buttons__icons"]}>
         <IconButton path={call}/>
         <IconButton path={location}/>
