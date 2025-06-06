@@ -4,7 +4,7 @@ import s from "./Modal.module.scss"
 
 const Modal: FC<ModalProps> = ({children, ...rest}) => {
   return(
-    <MuiModal {...rest} classes={{root: s.modal}}>
+    <MuiModal {...rest} sx={{overflow: "auto", zIndex: 3000}}>
       <div className={s.modal__content}>
         {children}
       </div>

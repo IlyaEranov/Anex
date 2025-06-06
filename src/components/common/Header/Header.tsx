@@ -5,7 +5,7 @@ import Nav from "../Nav/Nav"
 import IconButton from "../buttons/IconButton/IconButton"
 import menu from "../../../assets/icons/menu.svg"
 import NavButtons from "../NavButtons/NavButtons"
-import DropDown from "../DropDown/DropDown"
+import Dropdown from "../Dropdown/DropDown"
 import { useModal } from "../../../hooks/useModal"
 
 function Header() {
@@ -26,7 +26,7 @@ function Header() {
           <IconButton path={menu} onClick={handlerActive}/>
         </div>
       </div>
-      <DropDown open={isActive} onClose={handlerActive}/>
+      <Dropdown open={isActive} onClose={handlerActive}/>
     </header>
   )
 }

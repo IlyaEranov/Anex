@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import s from "./ModalBottom.module.scss"
 import Button from "../../../../../common/buttons/Button/Button"
-import arrow from "../../../../../assets/icons/diagonal-arrow.svg"
+import arrow from "../../../../../../assets/icons/diagonal-arrow.svg"
 
 interface ModalBottomProps {
   onClick?: () => void

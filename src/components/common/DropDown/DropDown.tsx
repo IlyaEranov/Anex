@@ -15,7 +15,7 @@ const company = [
   "Агентам"
 ]
 
-const DropDown: FC<DrawerProps> = ({ ...rest }) => {
+const Dropdown: FC<DrawerProps> = ({ ...rest }) => {
   return (
     <Drawer className={s.dropdown} anchor="top" hideBackdrop {...rest}>
       <div className={s.dropdown__main}>
@@ -60,4 +60,4 @@ const DropDown: FC<DrawerProps> = ({ ...rest }) => {
   )
 }
 
-export default DropDown
+export default Dropdown

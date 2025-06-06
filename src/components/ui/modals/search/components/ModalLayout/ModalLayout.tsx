@@ -1,6 +1,14 @@
-import { useLayoutEffect, useState } from "react"
+import { useLayoutEffect, useState, type FC, type ReactNode } from "react"
+import Modal from "../../../../../common/Modal/Modal"
+import Popover from "../../../../../common/Popover/Popover"
 
-const ModalLayout = () => {
+interface ModalLayoutProps{
+  children: ReactNode
+  isOpen: boolean
+  closeModal: () => void
+}
+
+const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal}) => {
 
   const [size, setSize] = useState(0)
 
@@ -15,6 +23,18 @@ const ModalLayout = () => {
   }, [])
 
   return(
-    <></>
+    <>
+      {size >= 1024 ?
+        <Popover open={isOpen} onClose={closeModal}>
+          <>{children}</>
+        </Popover>
+        :
+        <Modal open={isOpen} onClose={closeModal}>
+          <>{children}</>
+        </Modal>
+      }
+    </>
   )
 }
+
+export default ModalLayout

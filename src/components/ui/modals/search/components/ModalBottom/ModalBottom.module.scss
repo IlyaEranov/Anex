@@ -1,4 +1,4 @@
-@use "../../../../../styles/variables" as v;
+@use "../../../../../../styles/variables" as v;
 
 .modal-bottom{
   display: flex;
@@ -19,10 +19,4 @@
 .modal-bottom-button__text{
   font-size: 16px;
   font-weight: 500;
-}
-
-@media (min-width: 1024px) {
-  .modal-bottom{
-    display: none;
-  }
 }

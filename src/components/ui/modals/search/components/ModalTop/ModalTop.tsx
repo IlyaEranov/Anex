@@ -1,6 +1,6 @@
 import type { FC } from "react"
 import s from "./ModalTop.module.scss"
-import close from "../../../../../assets/icons/close.svg"
+import close from "../../../../../../assets/icons/close.svg"
 import IconButton from "../../../../../common/buttons/IconButton/IconButton"
 
 interface ModalTopProps{
