@@ -17,7 +17,7 @@ const company = [
 
 const Dropdown: FC<DrawerProps> = ({ ...rest }) => {
   return (
-    <Drawer className={s.dropdown} anchor="top" hideBackdrop {...rest}>
+    <Drawer className={s.dropdown} anchor="top" disableScrollLock {...rest}>
       <div className={s.dropdown__main}>
         <div className={s["dropdown-section"]}>
           <h3 className={s["dropdown-section__label"]}>ПОПУЛЯРНЫЕ СТРАНЫ</h3>

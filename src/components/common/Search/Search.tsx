@@ -26,7 +26,7 @@ function Search() {
         </div>
         <div className={s["search-button"]}>
           <Button variantColor="red">
-            <span>ПОДОБРАТЬ</span><img src={arrow} />
+            <span>ПОДОБРАТЬ</span><img src={arrow} className={s["search-button__arrow"]}/>
           </Button>
         </div>
       </div>

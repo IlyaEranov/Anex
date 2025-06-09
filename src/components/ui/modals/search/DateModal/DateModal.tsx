@@ -14,12 +14,12 @@ interface DateModalProps {
 
 const DateModal: FC<DateModalProps> = ({ placeholder }) => {
 
-  const { isActive, handlerActive } = useModal()
+  const { isActive, anchorEl, handlerActive } = useModal()
 
   return (
     <>
       <SelectField label={placeholder} onClick={handlerActive} />
-      <ModalLayout isOpen={isActive} closeModal={handlerActive}>
+      <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
         <ModalTop placeholder={placeholder} onClick={handlerActive} />
         <LocalizationProvider adapterLocale="ru" dateAdapter={AdapterDayjs}>
           <DateCalendar className={s.date} />

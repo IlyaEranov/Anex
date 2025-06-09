@@ -1,5 +1,11 @@
 @use "../../../styles/variables" as v;
 
+header{
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
 .header__inner{
   height: 68px;
   padding: 0 30px;
@@ -46,6 +52,12 @@
     width: 1px;
     margin: 0 24px;
     background-color: v.$line;
+  }
+}
+
+.menu__button{
+  button:hover{
+    background-color: #fff;
   }
 }
 

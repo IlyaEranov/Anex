@@ -1,0 +1,16 @@
+.field div, .field div:hover, .field div:focus{
+  background-color: rgba($color: #fff, $alpha: 0);
+}
+
+.field div::before{
+  border: 0px;
+}
+
+.field div:hover:not(.Mui-disabled .Mui-error):before{
+  border: 0px;
+} 
+
+.field div::after{
+  border: 0px;
+}
+

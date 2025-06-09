@@ -1,16 +1,18 @@
 import { useLayoutEffect, useState, type FC, type ReactNode } from "react"
 import Modal from "../../../../../common/Modal/Modal"
 import Popover from "../../../../../common/Popover/Popover"
+import s from "./ModalLayout.module.scss"
 
 interface ModalLayoutProps{
   children: ReactNode
   isOpen: boolean
-  closeModal: () => void
+  closeModal: (e: React.MouseEvent<HTMLDivElement>) => void
+  anchorEl: HTMLDivElement | null
 }
 
-const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal}) => {
+const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchorEl}) => {
 
-  const [size, setSize] = useState(0)
+  const [size, setSize] = useState(innerWidth)
 
   useLayoutEffect(() => {
     const updateSize = () => {
@@ -25,12 +27,15 @@ const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal}) => {
   return(
     <>
       {size >= 1024 ?
-        <Popover open={isOpen} onClose={closeModal}>
-          <>{children}</>
+        <Popover
+          anchorEl={anchorEl}
+          open={isOpen} 
+          onClose={closeModal}>
+          <div className={s.popover__content}>{children}</div>
         </Popover>
         :
         <Modal open={isOpen} onClose={closeModal}>
-          <>{children}</>
+          <div className={s.modal__content}>{children}</div>
         </Modal>
       }
     </>

@@ -17,13 +17,13 @@ interface DirectionModalProps {
 const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
 
   const [value, setValue] = useState("")
-  const { isActive, handlerActive } = useModal()
+  const { isActive, anchorEl, handlerActive } = useModal()
   const [index, setIndex] = useState<number | null>(null)
 
   return (
     <>
-      <SelectField label={placeholder} value={value} onClick={handlerActive} />
-      <ModalLayout isOpen={isActive} closeModal={handlerActive}>
+      <SelectField label={placeholder} value={value} onClick={handlerActive}/>
+      <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
         <ModalTop placeholder={placeholder} onClick={handlerActive} />
         <div className={s["direction-modal"]}>
           <div className={s["direction-modal__search"]}>

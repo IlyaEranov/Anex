@@ -1,5 +1,6 @@
 import { IconButton as MuiIconButton, type IconButtonProps as MuiIconButtonProps } from "@mui/material"
 import type { FC } from "react"
+import s from "./IconButton.module.scss"
 
 interface IconButtonProps extends MuiIconButtonProps{
   path: string
@@ -7,7 +8,7 @@ interface IconButtonProps extends MuiIconButtonProps{
 
 const IconButton: FC<IconButtonProps> = ({path, ...rest}) => {
   return(
-    <MuiIconButton {...rest}>
+    <MuiIconButton className={s.icon__button} {...rest}>
       <img src={path}/>
     </MuiIconButton>
   )

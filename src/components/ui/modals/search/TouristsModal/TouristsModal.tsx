@@ -14,7 +14,7 @@ function TouristsModal() {
   const placeholder = "Туристы"
   const [adults, setAdults] = useState(0)
   const [childs, setChilds] = useState(0)
-  const { isActive, handlerActive } = useModal()
+  const { isActive, anchorEl, handlerActive } = useModal()
 
   const handlerCount = (v: number, f: React.Dispatch<React.SetStateAction<number>>) => {
     if (v >= 0) {
@@ -30,7 +30,7 @@ function TouristsModal() {
   return (
     <>
       <SelectField label={placeholder} onClick={handlerActive} />
-      <ModalLayout isOpen={isActive} closeModal={handlerActive}>
+      <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
         <ModalTop placeholder={placeholder} onClick={handlerActive} />
         <div className={s["tourists-modal"]}>
           <div className={s["tourists-modal__item"]}>

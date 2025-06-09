@@ -5,14 +5,14 @@ import IconButton from "../../../../../common/buttons/IconButton/IconButton"
 
 interface ModalTopProps{
   placeholder: string
-  onClick?: () => void
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
 const ModalTop: FC<ModalTopProps> = ({placeholder, onClick}) => {
   return(
-    <div className={s["modal-top"]}>
+    <div className={s["modal-top"]} onClick={onClick}>
       <h2 className={s["modal-top__label"]}>{placeholder}</h2>
-      <IconButton path={close} onClick={onClick}/>
+      <IconButton path={close}/>
     </div>
   )
 }
