@@ -21,3 +21,33 @@
   font-size: 16px;
   font-weight: 300;
 }
+
+@media (min-width: 1024px) {
+  .tours__section{
+    padding: 100px 48px;
+  }
+  .tours-label{
+    align-items: start;
+  }
+  .tours-label__h2{
+    font-size: 44px;
+  }
+  .tours-label__h3{
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .tours__section{
+    padding: 140px;
+  }
+  .tours-label{
+    align-items: start;
+  }
+  .tours-label__h2{
+    font-size: 44px;
+  }
+  .tours-label__h3{
+    font-size: 24px;
+  }
+}

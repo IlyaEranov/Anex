@@ -13,7 +13,7 @@ interface RouteType{
 
 const RouteNames = {
   home: "/",
-  tours: "/tours"
+  tours: "/tours/:id?"
 }
 
 const publicRotues: RouteType[] = [
