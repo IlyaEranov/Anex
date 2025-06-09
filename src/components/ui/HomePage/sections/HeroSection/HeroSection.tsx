@@ -5,7 +5,7 @@ import Search from "../../../../common/Search/Search"
 function HeroSection() {
   return (
     <section className={s["hero-section"]}>
-      <div className={s["hero-section__wrapper"]}>
+      <div className={s["hero-section__inner"]}>
         <div className={s["hero-section__container"]}>
           <h1 className={s["hero-section__label"]}>ПУТЕШЕСТВИЯ МЕЧТЫ</h1>
           <Search/>
