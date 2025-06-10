@@ -3,17 +3,8 @@ import type { FC } from "react"
 import s from "./Dropdown.module.scss"
 import api from "../../../../mocks/api/api.json"
 import { Link } from "react-router-dom"
-import { navLinks } from "../../../router/routes"
+import { companyLinks, navLinks } from "../../../router/routes"
 import NavButtons from "../NavButtons/NavButtons"
-
-const company = [
-  "О нас",
-  "Отзывы",
-  "Контакты",
-  "Новости",
-  "Priority",
-  "Агентам"
-]
 
 const Dropdown: FC<DrawerProps> = ({ ...rest }) => {
   return (
@@ -45,7 +36,7 @@ const Dropdown: FC<DrawerProps> = ({ ...rest }) => {
         <div className={s["dropdown-section"]}>
           <h3 className={s["dropdown-section__label"]}>КОМПАНИЯ</h3>
           <ul className={s["dropdown-section__list"]}>
-            {company.map(e =>
+            {companyLinks.map(e =>
               <li key={e} className={s["dropdown-section__item"]}>
                 <Link to={"/"}>{e}</Link>
               </li>

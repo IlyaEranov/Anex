@@ -9,3 +9,12 @@ export const navLinks: navLinksType[] = [
   {path: "/hotels", value: "Отели"},
   {path: "/countries", value: "Страны"},
 ]
+
+export const companyLinks = [
+  "О нас",
+  "Отзывы",
+  "Контакты",
+  "Новости",
+  "Priority",
+  "Агентам"
+]
