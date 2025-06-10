@@ -26,15 +26,6 @@ function ToursSlider(){
           date={{dayStart: mockData.dayStart, dayEnd: mockData.dayEnd, mounth: mockData.mount}}
           price={mockData.price}
         />
-        <ToursCard
-          id=""
-          path=""
-          image={mockImage}
-          country={mockData.country}
-          city={mockData.city}
-          date={{dayStart: mockData.dayStart, dayEnd: mockData.dayEnd, mounth: mockData.mount}}
-          price={mockData.price}
-        />
       </div>
       <Slider/>
     </div>

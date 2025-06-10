@@ -1,0 +1,168 @@
+@use "../../../styles/variables" as v;
+
+.footer-line{
+  content: "";
+  height: 1px;
+  width: 100%;
+  margin: 40px 0;
+  background-color: v.$border-footer;
+}
+
+.footer__inner{
+  background-color: v.$bg-footer;
+  padding: 52px 30px;
+  border-radius: 30px 30px 0 0;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+}
+
+.footer__top{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__logo{
+  display: contents;
+}
+
+.footer-cta{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.footer-cta::before{
+  @extend .footer-line;
+}
+
+.footer-cta__label{
+  width: 150px;
+}
+
+.footer-cta__mail{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 8px 16px;
+  width: 240px;
+}
+
+.mail__feather{
+  width: 24px;
+  height: 24px;
+}
+
+.mail__input{
+  font-size: 14px;
+  height: 16px;
+}
+
+.mail__arrow{
+  width: 14px;
+  height: 14px;
+}
+
+.footer-nav{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-nav::before{
+  @extend .footer-line;
+}
+
+.footer-nav::after{
+  @extend .footer-line;
+}
+
+.footer-nav__inner{
+  width: 240px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.footer-nav__item{
+  text-align: center;
+}
+
+.footer-media{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-media__inner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-media::after{
+  @extend .footer-line;
+}
+
+.footer__bottom{
+  text-align: center;
+  color: v.$gray
+}
+
+@media (min-width: 768px) {
+  .footer__top{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-cta{
+    flex-direction: row;
+    width: auto;
+  }
+
+  .footer-cta::before{
+    display: none;
+  }
+  
+  .footer-media::after{
+    display: none;
+  }
+
+  .footer-nav{
+    align-items: normal;
+  }
+
+  .footer-nav__inner{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding: 0 6px;
+  }
+
+  .footer-media{
+    padding-bottom: 40px;
+  }
+  
+  .footer-media__inner{
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__inner{
+    padding: 52px 200px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer__inner{
+    padding: 52px 400px;
+  }
+}
