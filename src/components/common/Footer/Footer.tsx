@@ -36,7 +36,7 @@ function Footer() {
         <div className={s["footer-media"]}>
           <div className={s["footer-media__inner"]}>
             {mediaIcons.map(e =>
-              <img src={new URL(`../../../assets/icons/media/${e}.svg`, import.meta.url).href} />
+              <img key={e} src={new URL(`../../../assets/icons/media/${e}.svg`, import.meta.url).href} />
             )}
           </div>
         </div>

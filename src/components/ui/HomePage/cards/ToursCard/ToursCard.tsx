@@ -23,7 +23,7 @@ const ToursCard: FC<CardProps> = ({id, date, price, country, city, image}) => {
         <div className={s["card-bottom-item"]}>
           {date?.dayStart}-{date?.dayEnd} {date?.mounth}
         </div>
-        <Link to={`tours/${id}`} className={s["card-bottom__details"]}>узнать подробнее</Link>
+        <div className={s["card-bottom__details"]}>узнать подробнее</div>
       </div>
     </Link>
   )

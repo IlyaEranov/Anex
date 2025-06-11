@@ -140,9 +140,9 @@
 
   .footer-nav__inner{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: auto;
-    padding: 0 6px;
+    gap: 58px;
   }
 
   .footer-media{
