@@ -16,7 +16,7 @@ const mockData = {
 function ToursSlider() {
   return (
     <div className={s.tours__slider}>
-      <Slider blockWidth={260} countEl={4}>
+      <Slider blockWidth={260} countEl={4} offsetType="default">
         <ToursCard
           id=""
           path=""
