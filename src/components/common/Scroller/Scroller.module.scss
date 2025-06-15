@@ -1,0 +1,19 @@
+@use "../../../styles/variables" as v;
+
+.scroller{
+  height: 2px;
+  width: 100%;
+  background-color: v.$line;
+  position: relative;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.scroller__thumb{
+  position: absolute;
+  z-index: 2;
+  height: 2px;
+  background-color: #000;
+  border-radius: 4px;
+  transition: 0.3s;
+}
