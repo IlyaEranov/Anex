@@ -1,15 +1,11 @@
+import Container from "../../../../common/Container/Container"
 import ToursSlider from "../../sliders/ToursSlider/ToursSlider"
-import s from "./ToursSection.module.scss"
 
 function ToursSection() {
   return (
-    <section className={s.tours__section}>
-      <div className={s["tours-label"]}>
-        <h2 className={s["tours-label__h2"]}>ГОРЯЩИЕ ТУРЫ</h2>
-        <h3 className={s["tours-label__h3"]}>ПОЙМАТЕ МОМЕНТ</h3>
-      </div>
+    <Container h2="ГОРЯЩИЕ ТУРЫ" h3="ПОЙМАЙТЕ МОМЕНТ">
       <ToursSlider/>
-    </section>
+    </Container>
   )
 }
 

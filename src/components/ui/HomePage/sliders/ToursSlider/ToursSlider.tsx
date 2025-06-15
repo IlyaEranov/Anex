@@ -17,42 +17,17 @@ function ToursSlider() {
   return (
     <div className={s.tours__slider}>
       <Slider blockWidth={260}>
-        <ToursCard
-          id=""
-          path=""
-          image={mockImage}
-          country={mockData.country}
-          city={mockData.city}
-          date={{ dayStart: mockData.dayStart, dayEnd: mockData.dayEnd, mounth: mockData.mount }}
-          price={mockData.price}
-        />
-        <ToursCard
-          id=""
-          path=""
-          image={mockImage}
-          country={mockData.country}
-          city={mockData.city}
-          date={{ dayStart: mockData.dayStart, dayEnd: mockData.dayEnd, mounth: mockData.mount }}
-          price={mockData.price}
-        />
-        <ToursCard
-          id=""
-          path=""
-          image={mockImage}
-          country={mockData.country}
-          city={mockData.city}
-          date={{ dayStart: mockData.dayStart, dayEnd: mockData.dayEnd, mounth: mockData.mount }}
-          price={mockData.price}
-        />
-        <ToursCard
-          id=""
-          path=""
-          image={mockImage}
-          country={mockData.country}
-          city={mockData.city}
-          date={{ dayStart: mockData.dayStart, dayEnd: mockData.dayEnd, mounth: mockData.mount }}
-          price={mockData.price}
-        />
+        {[...Array(20)].map(() =>
+          <ToursCard
+            id=""
+            path=""
+            image={mockImage}
+            country={mockData.country}
+            city={mockData.city}
+            date={{ dayStart: mockData.dayStart, dayEnd: mockData.dayEnd, mounth: mockData.mount }}
+            price={mockData.price}
+          />
+        )}
       </Slider>
     </div>
 
