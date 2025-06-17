@@ -4,7 +4,7 @@ import avatar from "../../../../../../mocks/images/77b25a31b49e58ea4fbbd69b8d68a
 
 function ReviewSlider() {
   return (
-    <Slider blockWidth={352}>
+    <Slider blockWidth={260}>
       {[...Array(20)].map(() =>
         <ReviewCard
           image={avatar}
