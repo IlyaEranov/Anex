@@ -10,8 +10,8 @@ function HotelsCarousel() {
           id=""
           path=""
           image={mockImage}
-          name="Villa Flori Como"
-          rating={4.9}
+          hotel="Villa Flori Como"
+          hotelRating={4.9}
         />
     }
   )

@@ -1,0 +1,56 @@
+@use "../../../../styles/variables" as v;
+@import "../../../../styles/variables";
+
+.card__container{
+  @extend .card;
+  background-color: v.$white-hover;
+  width: 352px;
+  max-height: 400px;
+  color: #000;
+  gap: 20px;
+  justify-content: stretch; 
+  font-weight: 300;
+}
+
+.card-avatar{
+  display: flex;
+  justify-content: center;
+}
+
+.card-avatar__container{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-size: 70px 100px;
+  background-position-y: 30%;
+}
+
+.card__main{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__rating{
+  display: flex;
+  justify-content: center;
+}
+
+.rating{
+  color: v.$red;
+}
+
+.card-person{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+ 
+  font-size: 12px;
+  text-align: center;
+  color: v.$gray-text;
+}
+
+.card__comment{
+  font-size: 16px;
+  text-align: left;
+}

@@ -1,5 +1,6 @@
 export interface date{
-  dayStart: number
-  dayEnd: number
-  mounth: string
+  dayStart?: number
+  dayEnd?: number
+  mounth?: string
+  year?: number
 }
