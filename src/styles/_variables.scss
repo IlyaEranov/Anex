@@ -43,3 +43,14 @@ $red-hover: #DD1A21;
 $purple: #463998;
 $bg-footer: #222222;
 $border-footer: #494949;
+
+.card{
+  padding: 20px;
+  border-radius: 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: relative;
+}

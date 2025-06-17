@@ -1,15 +1,10 @@
+@import "../../../../../styles/variables";
+
 .card__container{
   width: 220px;
   height: 300px;
-  padding: 20px;
   background-size: 260px 340px;
-  border-radius: 30px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-shrink: 0;
-  position: relative;
+  @extend .card
 }
 
 .card-buttons{

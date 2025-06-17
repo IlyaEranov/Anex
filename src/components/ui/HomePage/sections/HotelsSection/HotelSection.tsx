@@ -1,4 +1,5 @@
 import Container from "../../../../common/Container/Container"
+import HotelsCarousel from "../../sliders/HotelsCarousel/HotelsCarousel"
 
 function HotelSection(){
   return(
@@ -8,7 +9,7 @@ function HotelSection(){
       styleContainer={{backgroundColor: "#F8F8F8"}}
       styleLabel={{textAlign: "center", width: "100%"}}
     >
-      <></>
+      <HotelsCarousel/>
     </Container>
   )
 }
