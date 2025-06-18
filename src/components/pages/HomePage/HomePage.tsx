@@ -1,4 +1,5 @@
 import Layout from "../../common/Layout/Layout"
+import AboutSection from "../../ui/HomePage/sections/AboutSection/AboutSection"
 import FeedbackSection from "../../ui/HomePage/sections/FeedbackSection/FeedbackSection"
 import HeroSection from "../../ui/HomePage/sections/HeroSection/HeroSection"
 import HotelSection from "../../ui/HomePage/sections/HotelsSection/HotelSection"
@@ -15,6 +16,7 @@ function HomePage(){
       <FeedbackSection/>
       <ReviewSection/>
       <NewsSection/>
+      <AboutSection/>
     </Layout>
   )
 }
