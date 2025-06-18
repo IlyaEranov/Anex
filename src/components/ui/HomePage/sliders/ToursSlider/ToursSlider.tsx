@@ -15,8 +15,9 @@ const mockData = {
 function ToursSlider() {
   return (
     <Slider blockWidth={260}>
-      {[...Array(20)].map(() =>
+      {[...Array(20)].map((_, i) =>
         <ToursCard
+          key={`${mockData.country}${i}`}
           id=""
           path=""
           image={mockImage}

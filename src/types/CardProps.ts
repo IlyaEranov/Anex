@@ -14,4 +14,5 @@ export interface CardProps{
   rating?: number
   gender?: "male" | "female"
   comment?: string
+  refDiv?: React.Ref<HTMLDivElement>
 }

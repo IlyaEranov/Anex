@@ -4,9 +4,10 @@ import mockImage from "../../../../../../mocks/images/slider/d96efdf3f566822c894
 
 function HotelsCarousel() {
 
-  const array = [...Array(20)].map((e) => 
+  const array = [...Array(20)].map((e, i) => 
     e = {
       docs: <HotelsCard
+          key={`Villa Flori Como${i}`}
           id=""
           path=""
           image={mockImage}

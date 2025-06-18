@@ -1,0 +1,38 @@
+.image__container{
+  display: flex;
+  justify-content: center;
+}
+
+.image{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center 0%;
+  min-width: 260px;
+  max-width: 300px;
+  height: 260px;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.3) inset;
+  &._active{
+    max-width: 664px;
+    background-size: 664px 360px;
+  }
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.details{
+  font-size: 14px;
+  font-weight: 300;
+}

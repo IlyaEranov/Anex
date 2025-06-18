@@ -3,9 +3,9 @@ import type { CardProps } from "../../../../types/CardProps"
 import s from "./ReviewCard.module.scss"
 import { Rating } from "@mui/material"
 
-const ReviewCard: FC<CardProps> = ({ image, rating, name, city, gender, country, date, hotel, comment }) => {
+const ReviewCard: FC<CardProps> = ({ image, rating, name, city, gender, country, date, hotel, comment, refDiv }) => {
   return (
-    <div className={s.card__container}>
+    <div className={s.card__container} ref={refDiv}>
       <div className={s["card-avatar"]}>
         <div style={{ backgroundImage: `url(${image})` }} className={s["card-avatar__container"]}></div>
       </div>
