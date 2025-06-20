@@ -24,7 +24,7 @@ function Header() {
             <NavButtons/>
           </div>
           <div className={s.menu__button}>
-             <IconButton path={menu} onClick={handlerActive}/>
+             <IconButton path={menu} disableRipple onClick={handlerActive}/>
           </div>
         </div>
       </div>

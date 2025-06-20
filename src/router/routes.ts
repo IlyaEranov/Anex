@@ -5,7 +5,7 @@ interface navLinksType{
 
 export const navLinks: navLinksType[] = [
   {path: "/tours", value: "Подбор тура"},
-  {path: "/tours", value: "Горящие туры"},
+  {path: "/#hot-tours", value: "Горящие туры"},
   {path: "/hotels", value: "Отели"},
   {path: "/countries", value: "Страны"},
 ]

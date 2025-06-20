@@ -27,6 +27,11 @@
 .dropdown-section__item{
   font-weight: 300;
   font-size: 14px;
+  transition: 0.1s;
+}
+
+.dropdown-section__item:hover{
+  color: v.$gray;
 }
 
 .dropdown__bottom{

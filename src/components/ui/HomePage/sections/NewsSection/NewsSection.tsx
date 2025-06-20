@@ -1,7 +1,7 @@
 import Container from "../../../../common/Container/Container"
 import s from "./NewsSection.module.scss"
 import api from "../../../../../../mocks/api/api.json"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "../../../../common/buttons/Button/Button"
 
 function NewsSection() {
@@ -11,6 +11,19 @@ function NewsSection() {
   const isActive = (i: number) => {
     return i % 6 == 0 || i == 0 ? s._active : ``
   }
+
+  useEffect(() => {
+    const getLimit = () => {
+      if(innerWidth >= 768){
+        setLimit(api.news.length)
+      } else {
+        setLimit(3)
+      }
+    }
+    getLimit()
+    addEventListener("resize", getLimit)
+    return () => removeEventListener("resize", getLimit)
+  }, [])
 
   return (
     <Container
