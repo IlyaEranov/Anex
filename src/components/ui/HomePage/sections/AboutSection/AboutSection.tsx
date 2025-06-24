@@ -9,6 +9,7 @@ function AboutSection() {
       h2="О НАС"
       h3="ВДОХНОВЛЯЕМ МИР НА ПУТЕШЕСТВИЯ"
       styleLabel={{ textAlign: "center", width: `100%` }}
+      id="about"
     >
       <div className={s["about-container"]}>
         <div className={s["about-container__row"]}>

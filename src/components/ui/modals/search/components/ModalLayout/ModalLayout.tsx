@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState, type FC, type ReactNode } from "react"
+import { useEffect, useLayoutEffect, useState, type FC, type ReactNode } from "react"
 import Modal from "../../../../../common/Modal/Modal"
 import Popover from "../../../../../common/Popover/Popover"
 import s from "./ModalLayout.module.scss"
@@ -24,13 +24,21 @@ const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchor
     return () => removeEventListener("resize", updateSize)
   }, [])
 
+  useEffect(() => {
+    if(isOpen){
+      anchorEl?.scrollIntoView({block: "center", behavior: "smooth"})
+    }
+  }, [isOpen])
+
   return(
     <>
       {size >= 1024 ?
         <Popover
           anchorEl={anchorEl}
           open={isOpen} 
-          onClose={closeModal}>
+          onClose={closeModal} 
+          disableScrollLock={false}
+        >
           <div className={s.popover__content}>{children}</div>
         </Popover>
         :

@@ -7,6 +7,7 @@ function ReviewSection(){
       h2="ОТЗЫВЫ"
       h3="ВПЕЧАТЛЕНИЯ НАШИХ ПУТЕШЕСТВЕННИКОВ"
       styleLabel={{textAlign: "center", width: "100%"}}
+      id="reviews"
     >
       <ReviewSlider/>
     </Container>

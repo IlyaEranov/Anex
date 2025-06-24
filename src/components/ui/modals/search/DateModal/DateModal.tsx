@@ -22,8 +22,10 @@ const DateModal: FC<DateModalProps> = ({ placeholder }) => {
       <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
         <ModalTop placeholder={placeholder} onClick={handlerActive} />
         <LocalizationProvider adapterLocale="ru" dateAdapter={AdapterDayjs}>
-          <DateCalendar className={s.date} />
-          <DateCalendar className={s.date} />
+          <div className={s.row}>
+            <DateCalendar className={s.date} />
+            <DateCalendar className={s.date} />
+          </div>
         </LocalizationProvider>
         <ModalBottom />
       </ModalLayout>

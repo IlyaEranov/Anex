@@ -8,6 +8,7 @@ function HotelSection(){
       h3="УЮТ И РОСКОШЬ В ЛУЧШИХ ОТЕЛЯХ МИРА"
       styleContainer={{backgroundColor: "#F8F8F8"}}
       styleLabel={{textAlign: "center", width: "100%"}}
+      id="hotels"
     >
       <HotelsCarousel/>
     </Container>

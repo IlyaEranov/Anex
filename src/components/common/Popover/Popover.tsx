@@ -16,7 +16,6 @@ const Popover: FC<PopoverProps> = ({ children, ...rest }) => {
       autoFocus={false}
       disableAutoFocus
       disableScrollLock
-      hideBackdrop
       sx={{zIndex: 3000}}
       classes={{paper: s.popover}}
       {...rest}

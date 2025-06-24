@@ -5,30 +5,46 @@ import Nav from "../Nav/Nav"
 import IconButton from "../buttons/IconButton/IconButton"
 import menu from "../../../assets/icons/menu.svg"
 import NavButtons from "../NavButtons/NavButtons"
-import Dropdown from "../Dropdown/Dropdown"
+import Dropdown from "../Dropdown/DropDown"
 import { useModal } from "../../../hooks/useModal"
+import { useEffect, useState } from "react"
 
 function Header() {
 
-  const {isActive, handlerActive} = useModal()
+  const { isActive, handlerActive } = useModal()
+  const [isShow, setShow] = useState(true)
+  const [offset, setOffset] = useState(0)
+
+  useEffect(() => {
+    const handlerScroll = () => {
+      setOffset(scrollY)
+      if (scrollY > offset) {
+        setShow(false)
+      } else {
+        setShow(true)
+      }
+    }
+    addEventListener("scroll", handlerScroll)
+    return () => removeEventListener("scroll", handlerScroll)
+  }, [scrollY])
 
   return (
-    <header>
+    <header className={`${s.header} ${isShow ? s._active : s._disabled}`}>
       <div className={s.header__inner}>
         <Link to={"/"}>
           <img className={"header-logo__icon"} src={logo} />
         </Link>
-        <Nav/>
+        <Nav />
         <div className={s["header-buttons"]}>
           <div className={s["header-buttons_active"]}>
-            <NavButtons/>
+            <NavButtons />
           </div>
           <div className={s.menu__button}>
-             <IconButton path={menu} disableRipple onClick={handlerActive}/>
+            <IconButton path={menu} disableRipple onClick={handlerActive} />
           </div>
         </div>
       </div>
-      <Dropdown open={isActive} onClose={handlerActive}/>
+      <Dropdown open={isActive} onClose={handlerActive} />
     </header>
   )
 }

@@ -30,6 +30,7 @@ function NewsSection() {
       h2="НОВОСТИ"
       h3="СОБЫТИЯ В МИРЕ ТУРИЗМА"
       styleContainer={{ backgroundColor: "#F8F8F8" }}
+      id="news"
     >
       <ul className={s["news-list"]}>
         {api.news.map((e, i) =>

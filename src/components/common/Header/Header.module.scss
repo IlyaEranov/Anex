@@ -1,12 +1,19 @@
 @use "../../../styles/variables" as v;
 
-header{
+.header {
   position: sticky;
   top: 0;
   z-index: 2000;
+  transition: 0.4s;
+  &._active {
+    transform: translateY(0);
+  }
+  &._disabled{
+    transform: translateY(-100px);
+  }
 }
 
-.header__inner{
+.header__inner {
   height: 68px;
   padding: 0 30px;
 
@@ -31,7 +38,7 @@ header{
   align-items: center;
 }
 
-.header-buttons_active{
+.header-buttons_active {
   display: none;
 }
 
@@ -46,7 +53,7 @@ header{
     align-items: center;
   }
 
-  .header-buttons_active::after{
+  .header-buttons_active::after {
     content: "";
     height: 40px;
     width: 1px;
@@ -55,14 +62,14 @@ header{
   }
 }
 
-.menu__button{
-  button:hover{
+.menu__button {
+  button:hover {
     background-color: #fff;
   }
 }
 
-@media (min-width: 1440px){
-  .header__inner{
+@media (min-width: 1440px) {
+  .header__inner {
     padding: 0;
     justify-content: center;
     gap: 80px;

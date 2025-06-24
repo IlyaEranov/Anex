@@ -1,16 +1,15 @@
-import Button from "../buttons/Button/Button"
-import IconButton from "../buttons/IconButton/IconButton"
 import s from "./NavButton.module.scss"
-import call from "../../../assets/icons/call.svg"
-import location from "../../../assets/icons/location.svg"
+import RequestModal from "../../ui/modals/header/RequestModal/RequestModal"
+import CallPopover from "../../ui/modals/header/CallPopover/CallPopover"
+import AddressPopover from "../../ui/modals/header/AddressPopover/AddressPopover"
 
 function NavButtons(){
   return(
     <div className={s["nav-buttons"]}>
-      <Button variant="text" variantColor="white">ОСТАВИТЬ ЗАЯВКУ</Button>
+      <RequestModal/>
       <div className={s["nav-buttons__icons"]}>
-        <IconButton path={call}/>
-        <IconButton path={location}/>
+        <CallPopover/>
+        <AddressPopover/>
       </div>
     </div>
   )
