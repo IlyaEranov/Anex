@@ -3,7 +3,9 @@
 .card__container{
   width: 220px;
   height: 300px;
-  background-size: 260px 340px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   @extend .card
 }
 

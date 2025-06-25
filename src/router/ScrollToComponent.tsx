@@ -11,7 +11,7 @@ function ScrollToComponent(){
         const id = hash.replace("#", "")
         const el = document.getElementById(id)
         if(el){
-          el.scrollIntoView({behavior: "smooth"})
+          el.scrollIntoView({ block: "center", behavior: "smooth"})
         }
       }, 0)
     }

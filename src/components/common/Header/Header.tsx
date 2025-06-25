@@ -18,7 +18,9 @@ function Header() {
   useEffect(() => {
     const handlerScroll = () => {
       setOffset(scrollY)
-      if (scrollY > offset) {
+      if (scrollY < 100) {
+        setShow(true)
+      } else if(scrollY > offset) {
         setShow(false)
       } else {
         setShow(true)
