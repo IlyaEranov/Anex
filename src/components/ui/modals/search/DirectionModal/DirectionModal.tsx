@@ -8,22 +8,20 @@ import api from "../../../../../../mocks/api/api.json"
 import s from "./DirectionModal.module.scss"
 import CheckBox from "../../../../common/buttons/CheckBox/CheckBox"
 import { FormControlLabel } from "@mui/material"
-import ModalLayout from "../components/ModalLayout/ModalLayout"
+import ModalLayout, { type ModalLayoutProps } from "../components/ModalLayout/ModalLayout"
 
-interface DirectionModalProps {
+interface DirectionModalProps extends ModalLayoutProps {
   placeholder: "Откуда" | "Куда"
 }
 
-const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
+const DirectionModal: FC<DirectionModalProps> = ({ placeholder,   }) => {
 
-  const [value, setValue] = useState("")
   const { isActive, anchorEl, handlerActive } = useModal()
   const [index, setIndex] = useState<number | null>(null)
 
   return (
     <>
-      <SelectField label={placeholder} value={value} onClick={handlerActive}/>
-      <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
+      <ModalLayout isOpen={open} closeModal={handlerActive} anchorEl={anchorEl}>
         <ModalTop placeholder={placeholder} onClick={handlerActive} />
         <div className={s["direction-modal"]}>
           <div className={s["direction-modal__search"]}>
@@ -41,10 +39,8 @@ const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
                         checked={i == index ? true : false}
                         onClick={() => {
                           if (i == index) {
-                            setValue("")
                             setIndex(null)
                           } else {
-                            setValue(e.name)
                             setIndex(i)
                           }
                         }}
@@ -66,10 +62,10 @@ const DirectionModal: FC<DirectionModalProps> = ({ placeholder }) => {
                       checked={i == index ? true : false}
                       onClick={() => {
                         if (i == index) {
-                          setValue("")
+
                           setIndex(null)
                         } else {
-                          setValue(e.name)
+                          
                           setIndex(i)
                         }
                       }}

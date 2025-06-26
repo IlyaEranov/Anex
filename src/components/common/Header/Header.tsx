@@ -5,9 +5,9 @@ import Nav from "../Nav/Nav"
 import IconButton from "../buttons/IconButton/IconButton"
 import menu from "../../../assets/icons/menu.svg"
 import NavButtons from "../NavButtons/NavButtons"
-import Dropdown from "../Dropdown/DropDown"
 import { useModal } from "../../../hooks/useModal"
 import { useEffect, useState } from "react"
+import Drawer from "../Drawer/Drawer"
 
 function Header() {
 
@@ -21,7 +21,9 @@ function Header() {
       if (scrollY < 100) {
         setShow(true)
       } else if(scrollY > offset) {
-        setShow(false)
+        setTimeout(() => {
+          setShow(false)
+        }, 500)
       } else {
         setShow(true)
       }
@@ -46,7 +48,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <Dropdown open={isActive} onClose={handlerActive} />
+      <Drawer open={isActive} onClose={handlerActive} />
     </header>
   )
 }

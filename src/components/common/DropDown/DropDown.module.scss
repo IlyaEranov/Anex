@@ -1,79 +1,15 @@
-@use "../../../styles/variables" as v;
-
 .dropdown{
-  div{
-    top: 68px;
+  display: none;
+  position: relative;
+  &._active{
+    display: inline-block;
   }
 }
 
-.dropdown__main{
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown-section{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 15px 30px;
-}
-
-.dropdown-section__list{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px
-}
-
-.dropdown-section__item{
-  font-weight: 300;
-  font-size: 14px;
-  transition: 0.1s;
-}
-
-.dropdown-section__item:hover{
-  color: v.$gray;
-}
-
-.dropdown__bottom{
-  border-top: 1px solid v.$line;
-  padding: 30px 0;
-  margin: 45px 30px 0px;
-}
-
-@media (min-width: 768px) {
-  .dropdown{
-    top: 85px;
-  }
-
-  .dropdown__main{
-    justify-content: center;
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .dropdown-section{
-    padding: 52px 30px;
-    width: 240px;
-  }
-
-  .dropdown-section__list{
-    grid-template-columns: 1fr;
-  }
-
-  .dropdown__bottom{
-    display: none;
-  }
-}
-
-@media (min-width: 1024px) {
-
-  .dropdown{
-    div{
-      top: 85px;
-    }
-  }
-
-  .dropdown__main{
-    gap: 60px;
-  }
+.dropdown__content{
+  background-color: #fff;
+  border-radius: 30px;
+  position: absolute;
+  min-width: 300px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }

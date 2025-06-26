@@ -28,31 +28,28 @@ function TouristsModal() {
   }
 
   return (
-    <>
-      <SelectField label={placeholder} onClick={handlerActive} />
-      <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
-        <ModalTop placeholder={placeholder} onClick={handlerActive} />
-        <div className={s["tourists-modal"]}>
-          <div className={s["tourists-modal__item"]}>
-            <div className={s["tourists-modal__text"]}>Взрослые</div>
-            <div className={s["tourists-modal__counter"]}>
-              <IconButton path={decrement} onClick={() => handlerCount(adults - 1, setAdults)} />
-              <span>{adults}</span>
-              <IconButton path={increment} onClick={() => handlerCount(adults + 1, setAdults)} />
-            </div>
-          </div>
-          <div className={s["tourists-modal__item"]}>
-            <div className={s["tourists-modal__text"]}>Дети (0-17 лет)</div>
-            <div className={s["tourists-modal__counter"]}>
-              <IconButton path={decrement} onClick={() => handlerCount(childs - 1, setChilds)} />
-              <span>{childs}</span>
-              <IconButton path={increment} onClick={() => handlerCount(childs + 1, setChilds)} />
-            </div>
+    <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
+      <ModalTop placeholder={placeholder} onClick={handlerActive} />
+      <div className={s["tourists-modal"]}>
+        <div className={s["tourists-modal__item"]}>
+          <div className={s["tourists-modal__text"]}>Взрослые</div>
+          <div className={s["tourists-modal__counter"]}>
+            <IconButton path={decrement} onClick={() => handlerCount(adults - 1, setAdults)} />
+            <span>{adults}</span>
+            <IconButton path={increment} onClick={() => handlerCount(adults + 1, setAdults)} />
           </div>
         </div>
-        <ModalBottom onClick={handlerReset} />
-      </ModalLayout>
-    </>
+        <div className={s["tourists-modal__item"]}>
+          <div className={s["tourists-modal__text"]}>Дети (0-17 лет)</div>
+          <div className={s["tourists-modal__counter"]}>
+            <IconButton path={decrement} onClick={() => handlerCount(childs - 1, setChilds)} />
+            <span>{childs}</span>
+            <IconButton path={increment} onClick={() => handlerCount(childs + 1, setChilds)} />
+          </div>
+        </div>
+      </div>
+      <ModalBottom onClick={handlerReset} />
+    </ModalLayout>
   )
 }
 

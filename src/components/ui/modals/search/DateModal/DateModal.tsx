@@ -17,19 +17,16 @@ const DateModal: FC<DateModalProps> = ({ placeholder }) => {
   const { isActive, anchorEl, handlerActive } = useModal()
 
   return (
-    <>
-      <SelectField label={placeholder} onClick={handlerActive} />
-      <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
-        <ModalTop placeholder={placeholder} onClick={handlerActive} />
-        <LocalizationProvider adapterLocale="ru" dateAdapter={AdapterDayjs}>
-          <div className={s.row}>
-            <DateCalendar className={s.date} />
-            <DateCalendar className={s.date} />
-          </div>
-        </LocalizationProvider>
-        <ModalBottom />
-      </ModalLayout>
-    </>
+    <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
+      <ModalTop placeholder={placeholder} onClick={handlerActive} />
+      <LocalizationProvider adapterLocale="ru" dateAdapter={AdapterDayjs}>
+        <div className={s.row}>
+          <DateCalendar className={s.date} />
+          <DateCalendar className={s.date} />
+        </div>
+      </LocalizationProvider>
+      <ModalBottom />
+    </ModalLayout>
   )
 }
 

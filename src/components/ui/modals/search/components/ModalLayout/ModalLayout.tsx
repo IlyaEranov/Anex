@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect, useState, type FC, type ReactNode } from "react"
 import Modal from "../../../../../common/Modal/Modal"
-import Popover from "../../../../../common/Popover/Popover"
 import s from "./ModalLayout.module.scss"
+import Dropdown from "../../../../../common/Dropdown/Dropdown"
 
-interface ModalLayoutProps{
+export interface ModalLayoutProps{
   children: ReactNode
   isOpen: boolean
   closeModal: (e: React.MouseEvent<HTMLDivElement>) => void
@@ -26,21 +26,19 @@ const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchor
 
   useEffect(() => {
     if(isOpen){
-      anchorEl?.scrollIntoView({block: "center", behavior: "smooth"})
+      anchorEl?.scrollIntoView({block: "start", behavior: "smooth"})
     }
   }, [isOpen])
 
   return(
     <>
       {size >= 1024 ?
-        <Popover
-          anchorEl={anchorEl}
-          open={isOpen} 
+        <Dropdown
+          open={Boolean(anchorEl)} 
           onClose={closeModal} 
-          disableScrollLock={false}
         >
-          <div className={s.popover__content}>{children}</div>
-        </Popover>
+          {children}
+        </Dropdown>
         :
         <Modal open={isOpen} onClose={closeModal}>
           <div className={s.modal__content}>{children}</div>

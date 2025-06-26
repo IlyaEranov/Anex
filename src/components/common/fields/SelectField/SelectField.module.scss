@@ -1,6 +1,6 @@
-.field div, .field div:hover, .field div:focus{
+.field div, .field div:hover, .field div:focus, .field label{
   color: #000;
-  background-color: rgba($color: #fff, $alpha: 0);
+  background-color: rgba($color: #fff, $alpha: 1);
 }
 
 .field div::before{
