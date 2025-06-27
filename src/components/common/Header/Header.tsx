@@ -18,12 +18,10 @@ function Header() {
   useEffect(() => {
     const handlerScroll = () => {
       setOffset(scrollY)
-      if (scrollY < 100) {
+      if (scrollY < 500) {
         setShow(true)
       } else if(scrollY > offset) {
-        setTimeout(() => {
-          setShow(false)
-        }, 500)
+        setShow(false)
       } else {
         setShow(true)
       }
