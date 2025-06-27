@@ -1,15 +1,27 @@
 @use "../../../styles/variables" as v;
 
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1800;
+}
+
 .search {
   background-color: #fff;
   width: 300px;
   border-radius: 30px;
   padding: 16px 24px;
+  position: relative;
 }
 
 .search-wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1900;
 }
 
 .search-wrapper__item {
@@ -73,5 +85,10 @@
   .search-button {
     width: 140px;
     padding-top: 0px;
+  }
+
+  .search__dropdown{
+    position: absolute;
+    padding-top: 14px;
   }
 }

@@ -4,13 +4,14 @@ import s from "./ModalLayout.module.scss"
 import Dropdown from "../../../../../common/Dropdown/Dropdown"
 
 export interface ModalLayoutProps{
-  children: ReactNode
+  children?: ReactNode
   isOpen: boolean
   closeModal: (e: React.MouseEvent<HTMLDivElement>) => void
   anchorEl: HTMLDivElement | null
+  defaultPos?: boolean
 }
 
-const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchorEl}) => {
+const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchorEl, defaultPos}) => {
 
   const [size, setSize] = useState(innerWidth)
 
@@ -26,7 +27,7 @@ const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchor
 
   useEffect(() => {
     if(isOpen){
-      anchorEl?.scrollIntoView({block: "start", behavior: "smooth"})
+      anchorEl?.scrollIntoView({block: "center", behavior: "smooth"})
     }
   }, [isOpen])
 
@@ -34,8 +35,9 @@ const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchor
     <>
       {size >= 1024 ?
         <Dropdown
-          open={Boolean(anchorEl)} 
-          onClose={closeModal} 
+          open={isOpen} 
+          anchorEl={anchorEl}
+          defaultPos={defaultPos}
         >
           {children}
         </Dropdown>

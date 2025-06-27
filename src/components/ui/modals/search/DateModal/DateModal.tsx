@@ -1,24 +1,19 @@
 import { type FC } from "react"
-import SelectField from "../../../../common/fields/SelectField/SelectField"
-import { useModal } from "../../../../../hooks/useModal"
 import ModalTop from "../components/ModalTop/ModalTop"
 import ModalBottom from "../components/ModalBottom/ModalBottom"
 import { DateCalendar, LocalizationProvider } from "@mui/x-date-pickers"
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
 import s from "./DateModal.module.scss"
-import ModalLayout from "../components/ModalLayout/ModalLayout"
+import ModalLayout, { type ModalLayoutProps } from "../components/ModalLayout/ModalLayout"
 
-interface DateModalProps {
+interface DateModalProps extends ModalLayoutProps {
   placeholder: "Дата" | "На сколько"
 }
 
-const DateModal: FC<DateModalProps> = ({ placeholder }) => {
-
-  const { isActive, anchorEl, handlerActive } = useModal()
-
+const DateModal: FC<DateModalProps> = ({ placeholder, isOpen, anchorEl, closeModal }) => {
   return (
-    <ModalLayout isOpen={isActive} closeModal={handlerActive} anchorEl={anchorEl}>
-      <ModalTop placeholder={placeholder} onClick={handlerActive} />
+    <ModalLayout defaultPos isOpen={isOpen} closeModal={closeModal} anchorEl={anchorEl}>
+      <ModalTop placeholder={placeholder} onClick={closeModal} />
       <LocalizationProvider adapterLocale="ru" dateAdapter={AdapterDayjs}>
         <div className={s.row}>
           <DateCalendar className={s.date} />

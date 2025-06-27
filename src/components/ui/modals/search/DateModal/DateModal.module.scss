@@ -1,9 +1,11 @@
-.row{
-  display: flex;
-  gap: 40px;
-  padding: 40px 40px 0 40px;
+.date {
+  width: 100%;
 }
 
-.date{
-  width: 100%;
+@media (min-width: 1024px) {
+  .row {
+    display: flex;
+    gap: 40px;
+    padding: 40px 40px 0 40px;
+  }
 }

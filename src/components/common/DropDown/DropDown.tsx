@@ -4,15 +4,20 @@ import s from "./Dropdown.module.scss"
 interface DropdownProps{
   children: ReactNode
   open: boolean
-  onClose: (e: React.MouseEvent<HTMLDivElement>) => void
+  anchorEl?: HTMLDivElement | null
+  defaultPos?: boolean
 }
 
-const Dropdown: FC<DropdownProps> = ({children, open, onClose}) => {
+const Dropdown: FC<DropdownProps> = ({children, open, anchorEl, defaultPos}) => {
+
+
+
   return(
-    <div className={`${s.dropdown} ${open && s._active}`} onClick={onClose}>
-      <div className={s.dropdown__content}>
-        {children}
-      </div>
+    <div 
+      className={`${s.dropdown} ${open && s._active}`} 
+      style={{left: defaultPos ? 100 : anchorEl ? anchorEl.offsetLeft - 12 : 0}}
+    >
+      {children}
     </div>
   )
 }

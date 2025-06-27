@@ -9,42 +9,71 @@ import { useModal } from "../../../hooks/useModal"
 
 function Search() {
 
-  const {anchorEl, handlerActive} = useModal()
+  const { anchorEl, getAnchorEl, backdropActive } = useModal(["where-from", "where-to", "date", "how-long", "tourists"])
+
+  // disableWithScroll()
 
   return (
-    <div className={s.search}>
-      <div className={s["search-wrapper"]}>
-        <div className={s["search-wrapper__item"]}>
-          <SelectField label="Откуда"/>
-        </div>
-        <div className={s["search-wrapper__item"]}>
-          <SelectField label="Куда"/>
-        </div>
-        <div className={s["search-wrapper__item"]}>
-          <SelectField slotProps={{input: {readOnly: true}}} label="Дата"/>
-        </div>
-        <div className={s["search-wrapper__item"]}>
-          <div className={s["search-wrapper-bottom"]}>
-            <div className={s["search-wrapper-bottom__item"]}>
-              <SelectField slotProps={{input: {readOnly: true}}} label="На сколько"/>
+    <>
+      <div className={s.search}>
+        <div className={s["search-wrapper"]}>
+          <div className={s["search-wrapper__item"]}>
+            <SelectField itemID="where-from" label="Откуда" onClick={getAnchorEl} />
+          </div>
+          <div className={s["search-wrapper__item"]}>
+            <SelectField itemID="where-to" label="Куда" onClick={getAnchorEl} />
+          </div>
+          <div className={s["search-wrapper__item"]}>
+            <SelectField itemID="date" slotProps={{ input: { readOnly: true } }} label="Дата" onClick={getAnchorEl} />
+          </div>
+          <div className={s["search-wrapper__item"]}>
+            <div className={s["search-wrapper-bottom"]}>
+              <div className={s["search-wrapper-bottom__item"]}>
+                <SelectField itemID="how-long" slotProps={{ input: { readOnly: true } }} label="На сколько" onClick={getAnchorEl} />
+              </div>
+              <SelectField itemID="tourists" label="Туристы" slotProps={{ input: { readOnly: true } }} onClick={getAnchorEl} />
             </div>
-            <SelectField label="Туристы" slotProps={{input: {readOnly: true}}}/>
+          </div>
+          <div className={s["search-button"]}>
+            <Button variantColor="red">
+              <span>ПОДОБРАТЬ</span><img src={arrow} className={s["search-button__arrow"]} />
+            </Button>
           </div>
         </div>
-        <div className={s["search-button"]}>
-          <Button variantColor="red">
-            <span>ПОДОБРАТЬ</span><img src={arrow} className={s["search-button__arrow"]}/>
-          </Button>
+        <div className={s.search__dropdown}>
+          <DirectionModal
+            isOpen={Boolean(anchorEl?.getAttribute("itemid") === "where-from")}
+            anchorEl={anchorEl}
+            closeModal={getAnchorEl}
+            placeholder="Откуда"
+          />
+          <DirectionModal
+            isOpen={Boolean(anchorEl?.getAttribute("itemid") === "where-to")}
+            anchorEl={anchorEl}
+            closeModal={getAnchorEl}
+            placeholder="Куда"
+          />
+          <DateModal
+            isOpen={Boolean(anchorEl?.getAttribute("itemid") === "date")}
+            anchorEl={anchorEl}
+            closeModal={getAnchorEl}
+            placeholder="Дата"
+          />
+          <DateModal
+            isOpen={Boolean(anchorEl?.getAttribute("itemid") === "how-long")}
+            anchorEl={anchorEl}
+            closeModal={getAnchorEl}
+            placeholder="На сколько"
+          />
+          <TouristsModal
+            isOpen={Boolean(anchorEl?.getAttribute("itemid") === "tourists")}
+            anchorEl={anchorEl}
+            closeModal={getAnchorEl}
+          />
         </div>
       </div>
-      <div className={s.search__dropdown}>
-        <DirectionModal placeholder="Откуда"/>
-        <DirectionModal placeholder="Куда"/>
-        <DateModal placeholder="Дата"/>
-        <DateModal placeholder="На сколько" />
-        <TouristsModal/>
-      </div>
-    </div>
+      {backdropActive && <div className={s.backdrop} onClick={getAnchorEl}></div>}
+    </>
   )
 }
 
