@@ -8,7 +8,7 @@ function ReviewSlider() {
   const blockWidth = useRef<HTMLDivElement>(null)
 
   return (
-    <Slider blockWidth={blockWidth.current?.clientWidth || 320}>
+    <Slider blockWidth={blockWidth.current?.clientWidth || 260}>
       {[...Array(20)].map((_, i) =>
         <ReviewCard
           key={`Александр Г.${i}`}

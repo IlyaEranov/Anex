@@ -4,7 +4,7 @@ import mockImage from "../../../../../../mocks/images/slider/d96efdf3f566822c894
 import Carousel from "../../../../common/Carousel/Carosel"
 import HotelsCard from "../../cards/HotelsCard/HotelsCard"
 import s from "./HotelsSection.module.scss"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "../../../../common/buttons/Button/Button"
 
 function HotelsSection() {
@@ -21,6 +21,19 @@ function HotelsSection() {
   />
 
   const arrayEl = [...Array(20)].map(e => e = element)
+
+  useEffect(() => {
+    const getLimit = () => {
+      if(innerWidth >= 768){
+        setLimit(20)
+      } else {
+        setLimit(3)
+      }
+    }
+    getLimit()
+    addEventListener("resize", getLimit)
+    return () => removeEventListener("resize", getLimit)
+  }, [])
 
   return (
     <Container
