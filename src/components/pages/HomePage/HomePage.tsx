@@ -2,7 +2,7 @@ import Layout from "../../common/Layout/Layout"
 import AboutSection from "../../ui/HomePage/sections/AboutSection/AboutSection"
 import FeedbackSection from "../../ui/sections/FeedbackSection/FeedbackSection"
 import HeroSection from "../../ui/HomePage/sections/HeroSection/HeroSection"
-import HotelSection from "../../ui/HomePage/sections/HotelsSection/HotelSection"
+import HotelsSection from "../../ui/HomePage/sections/HotelsSection/HotelsSection"
 import NewsSection from "../../ui/HomePage/sections/NewsSection/NewsSection"
 import ReviewSection from "../../ui/HomePage/sections/ReviewSection/ReviewSection"
 import ToursSection from "../../ui/HomePage/sections/ToursSection/ToursSection"
@@ -15,7 +15,7 @@ function HomePage() {
     <Layout>
       <HeroSection />
       <ToursSection />
-      <HotelSection />
+      <HotelsSection />
       <FeedbackSection
         image={image1}
         h2="НЕ ОПРЕДЕЛИЛИСЬ С ВЫБОРОМ?"

@@ -1,0 +1,18 @@
+.hotels{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.hotels__grid{
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .hotels__grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
