@@ -46,7 +46,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <Drawer open={isActive} onClose={handlerActive} />
+      <Drawer open={isActive && isShow} onClose={handlerActive} />
     </header>
   )
 }

@@ -8,7 +8,7 @@ import NavButtons from "../NavButtons/NavButtons"
 
 const Drawer: FC<DrawerProps> = ({ ...rest }) => {
   return (
-    <MuiDrawer className={s.drawer} anchor="top" disableScrollLock {...rest}>
+    <MuiDrawer sx={{zIndex: 1999}} className={s.drawer} anchor="top" disableScrollLock {...rest}>
       <div className={s.drawer__main}>
         <div className={s["drawer-section"]}>
           <h3 className={s["drawer-section__label"]}>ПОПУЛЯРНЫЕ СТРАНЫ</h3>
