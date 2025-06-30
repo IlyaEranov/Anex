@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState, type FC, type ReactNode } from "r
 import Modal from "../../../../../common/Modal/Modal"
 import s from "./ModalLayout.module.scss"
 import Dropdown from "../../../../../common/Dropdown/Dropdown"
+import { useSize } from "../../../../../../hooks/useSize"
 
 export interface ModalLayoutProps{
   children?: ReactNode
@@ -13,17 +14,7 @@ export interface ModalLayoutProps{
 
 const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchorEl, defaultPos}) => {
 
-  const [size, setSize] = useState(innerWidth)
-
-  useLayoutEffect(() => {
-    const updateSize = () => {
-      setSize(innerWidth)
-    }
-
-    addEventListener("resize", updateSize)
-
-    return () => removeEventListener("resize", updateSize)
-  }, [])
+  const width = useSize()
 
   useEffect(() => {
     if(isOpen){
@@ -33,7 +24,7 @@ const ModalLayout: FC<ModalLayoutProps> = ({children, isOpen, closeModal, anchor
 
   return(
     <>
-      {size >= 1024 ?
+      {width >= 1024 ?
         <Dropdown
           open={isOpen} 
           anchorEl={anchorEl}
