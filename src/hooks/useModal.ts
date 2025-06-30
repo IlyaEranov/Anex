@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 export function useModal(itemIDs?: string[]){
   const [isActive, setActive] = useState(false)
   const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null)
   const [backdropActive, setBackdropActive] = useState(false)
 
-  const handlerActive = () => {
+  const handlerActive = (e: React.MouseEvent<HTMLDivElement>) => {
+    setAnchorEl(e.currentTarget)
     if(isActive){
       setActive(false)
     } else {
