@@ -15,7 +15,7 @@ interface FeedbackSectionProps{
 const FeedbackSection: FC<FeedbackSectionProps> = ({image, h2, h3, center}) => {
   return (
     <section className={`${s["feedback-section"]} ${center && s._center}`} style={{backgroundImage: `url(${image})`, }}>
-      <div className={s["feedback-section__container"]}>
+      <div className={s["feedback-section__container"]} style={{marginBottom: center ? 30 : 0}}>
         <div className={s["feedback-section-label"]}>
           <h2 className={s["feedback-section-label__h2"]}>{h2}</h2>
           <h3 className={s["feedback-section-label__h3"]}>{h3}</h3>
