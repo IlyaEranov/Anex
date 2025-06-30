@@ -3,6 +3,7 @@ import InputField from "../../../common/fields/InputField/InputField"
 import s from "./FeedbackSection.module.scss"
 import arrow from "../../../../assets/icons/diagonal-arrow.svg"
 import type { FC } from "react"
+import React from "react"
 
 interface FeedbackSectionProps{
   image: string
@@ -31,4 +32,4 @@ const FeedbackSection: FC<FeedbackSectionProps> = ({image, h2, h3, center}) => {
   )
 }
 
-export default FeedbackSection
+export default React.memo(FeedbackSection)
