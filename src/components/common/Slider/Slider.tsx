@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type FC, type ReactNode } from "react"
 import s from "./Slider.module.scss"
-import arrow from "../../../assets/icons/arrow.svg"
 import { useDebouncedCallback } from "use-debounce"
 import Scroller from "../Scroller/Scroller"
+import SliderArrow from "../buttons/SliderArrow/SliderArrow"
 
 interface SliderProps {
   children: ReactNode
@@ -98,15 +98,11 @@ const Slider: FC<SliderProps> = ({ children, blockWidth }) => {
   return (
     <div className={s.slider}>
       <div className={s.slider__inner}>
-        <div className={`${s.slider__arrow} ${s._left}`} onClick={handlerScrollLeft}>
-          <img className={s.arrow__icon} src={arrow} />
-        </div>
+        <SliderArrow type="left" onClick={handlerScrollLeft}/>
         <div className={s.slider__container} ref={sliderContainer}>
           {children}
         </div>
-        <div className={`${s.slider__arrow} ${s._right}`} onClick={handlerScrollRight}>
-          <img className={s.arrow__icon} src={arrow} />
-        </div>
+        <SliderArrow type="right" onClick={handlerScrollRight}/>
       </div>
       <Scroller widthThumb={thumbValue} position={thumbOffset} />
     </div>
